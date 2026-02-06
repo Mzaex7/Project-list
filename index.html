@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max Zeitler | Portfolio</title>
+    <meta name="description"
+        content="Portfolio von Max Zeitler - Dualer Student Wirtschaftsinformatik. Projekte in Data Science, AI, Web Development und mehr.">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="background-glow"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Header / Hero -->
+        <header>
+            <div class="header-content">
+                <h1>Max Zeitler</h1>
+                <p class="subtitle">Dual Student Data Science • AI Researcher • Solutions Engineer</p>
+
+                <div class="bio-list">
+                    <div class="bio-item">
+                        <span class="bio-icon">🎓</span>
+                        <span class="bio-text">B.Sc. Business Informatics – Data Science @ DHBW Stuttgart (Top
+                            10%)</span>
+                    </div>
+                    <div class="bio-item">
+                        <span class="bio-icon">🌍</span>
+                        <span class="bio-text">Semester Abroad @ University College Dublin (Master's Level Data
+                            Science)</span>
+                    </div>
+                    <div class="bio-item">
+                        <span class="bio-icon">💼</span>
+                        <span class="bio-text">AI Solutions & Research Intern @ Hewlett Packard Enterprise</span>
+                    </div>
+                    <div class="bio-item">
+                        <span class="bio-icon">🚀</span>
+                        <span class="bio-text">Focus: LLMs, RAG, Digital Twins & Synthetic Data</span>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://github.com/Mzaex7" class="social-icon" title="GitHub" target="_blank"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/max-zeitler" class="social-icon" title="LinkedIn"
+                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:zeitler.max04@gmail.com" class="social-icon" title="Email"><i
+                            class="fas fa-envelope"></i></a>
+                    <a href="CV_Max_Zeitler.pdf" class="social-icon" title="Resume" target="_blank"><i
+                            class="fas fa-file-alt"></i></a>
+                </div>
+            </div>
+
+            <div class="profile-image-container">
+                <img src="assets/images/profile.png" alt="Max Zeitler" class="profile-image">
+            </div>
+        </header>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2 class="section-title">Experience</h2>
+            <div class="experience-list">
+
+                <div class="experience-card">
+                    <div class="company-logo"><img src="assets/images/hpe.png" alt="HPE"></div>
+                    <div class="exp-content">
+                        <h3>Hewlett Packard Enterprise (HPE)</h3>
+                        <p class="exp-role">AI Solutions - Private Cloud AI (PCAI)</p>
+                        <p class="exp-desc">Designed a Python-based LLM benchmarking framework to evaluate HPE’s
+                            inference software against competitors like Ollama. Created Grafana dashboards for real-time
+                            inference metrics and constructed a strategic feature matrix aligning customer needs with
+                            the model lifecycle.</p>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="company-logo"><img src="assets/images/hpe.png" alt="HPE"></div>
+                    <div class="exp-content">
+                        <h3>Hewlett Packard Enterprise (HPE)</h3>
+                        <p class="exp-role">AI Excellence Center Central Europe</p>
+                        <p class="exp-desc">Research on Digital Twins and Synthetic Data (NVIDIA Cosmos). Authored a
+                            scientific paper on Video World Models (submitted to AITC26) and Deployment Guides for
+                            complex robotics workflows.</p>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="company-logo"><img src="assets/images/hpe.png" alt="HPE"></div>
+                    <div class="exp-content">
+                        <h3>Hewlett Packard Enterprise (HPE)</h3>
+                        <p class="exp-role">Data & AI Consulting</p>
+                        <p class="exp-desc">Evaluated Data Catalog tools (Alation, Amundsen, ...) and selected
+                            OpenMetadata for a DataOps Proof of Concept. Co-implemented the solution for HPE Discover
+                            Las Vegas.</p>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="company-logo"><img src="assets/images/engineering.png" alt="Formula Student"></div>
+                    <div class="exp-content">
+                        <h3>DHBW Engineering e.V. (Formula Student)</h3>
+                        <p class="exp-role">Data Engineer</p>
+                        <p class="exp-desc">Architected a scalable Big Data telemetry platform (Hadoop HDFS, Apache
+                            Hudi) for real-time vehicle analysis, enabling the engineering team to optimize car
+                            performance.</p>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="company-logo"><img src="assets/images/dhbw.png" alt="DHBW"></div>
+                    <div class="exp-content">
+                        <h3>DHBW Stuttgart</h3>
+                        <p class="exp-role">University Board Member & Student Representative</p>
+                        <p class="exp-desc">Elected representative shaping university strategy and curriculum
+                            development as a member of the governing body.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Projects Section (Limited to 6) -->
+        <section id="projects">
+            <h2 class="section-title">Selected Projects</h2>
+            <main id="project-grid" class="project-grid" data-limit="6">
+                <!-- Limit set to 6 via data-attribute -->
+            </main>
+
+            <div class="view-all-container">
+                <a href="projects.html" class="view-all-btn">View All Projects <i class="fas fa-arrow-right"
+                        style="margin-left: 0.5rem; font-size: 0.8em;"></i></a>
+            </div>
+        </section>
+
+        <footer>
+            <div class="social-links" style="margin-bottom: 0;">
+                <a href="https://github.com/Mzaex7" class="social-icon" title="GitHub" target="_blank"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/max-zeitler" class="social-icon" title="LinkedIn"
+                    target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:zeitler.max04@gmail.com" class="social-icon" title="Email"><i
+                        class="fas fa-envelope"></i></a>
+                <a href="CV_Max_Zeitler.pdf" class="social-icon" title="Resume" target="_blank"><i
+                        class="fas fa-file-alt"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
