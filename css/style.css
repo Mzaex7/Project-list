@@ -125,7 +125,7 @@ body {
 
 /* Layout Grid for Header */
 header {
-    margin-top: 1rem;
+    margin-top: 0;
     margin-bottom: 5rem;
     display: grid;
     grid-template-columns: 1fr auto;
@@ -134,7 +134,7 @@ header {
 }
 
 .page-header {
-    margin: 3rem 0;
+    margin: 0 0 3rem 0;
     display: block;
 }
 
@@ -251,7 +251,6 @@ h1 {
 .experience-card {
     display: grid;
     grid-template-columns: 80px 1fr;
-    /* Increased grid col for logo */
     gap: 1.5rem;
     padding: 1.5rem;
     background: var(--card-bg);
@@ -328,12 +327,14 @@ h1 {
     cursor: default;
     position: relative;
     overflow: hidden;
+    display: flex;
+    /* Ensures flex layout for internal children */
+    flex-direction: column;
+    /* Stacks content vertically by default */
 }
 
 /* Grid Layout specific (Default vertical card) */
 .project-grid .project-card {
-    display: flex;
-    flex-direction: column;
     height: 100%;
     padding: 2rem;
 }
@@ -377,10 +378,15 @@ h1 {
     position: relative;
     z-index: 2;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* Stack content vertically */
+    height: 100%;
+    /* Fill available height */
 }
 
 .project-grid .card-content {
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
 }
 
 /* Project Links Container (New) */
@@ -484,6 +490,7 @@ h1 {
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-top: auto;
+    /* Removed padding-top: 2rem; to satisfy user request "nicht auf der home und project seite" */
     z-index: 2;
 }
 

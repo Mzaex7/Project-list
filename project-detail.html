@@ -1,148 +1,224 @@
-/* Detail Page Styling */
+<!DOCTYPE html>
+<html lang="en">
 
-/* Overwrite .detail-container for flex layout */
-.detail-container {
-max-width: 900px;
-margin: 0 auto;
-padding: 6rem 2rem;
-min-height: 80vh;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details | Max Zeitler</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
 
-/* Header Re-Structure */
-.detail-header {
-display: flex;
-flex-direction: row; /* Horizontal alignment */
-align-items: flex-start; /* Align top */
-gap: 3rem; /* Space between Icon and Text */
-margin-bottom: 4rem;
-}
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Detail Page Styling */
 
-.detail-icon-container {
-flex-shrink: 0; /* Don't shrink the icon */
-background: rgba(255, 255, 255, 0.05); /* Container background from screenshot */
-border-radius: 20px;
-border: 1px solid var(--card-border);
-padding: 2rem;
-display: flex;
-align-items: center;
-justify-content: center;
-}
+        /* Overwrite .detail-container for flex layout */
+        .detail-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem 6rem;
+            /* Changed padding-top to 3rem to match other pages roughly */
+            min-height: 80vh;
+        }
 
-.detail-icon-container i {
-font-size: 3.5rem; /* Larger icon */
-color: var(--text-primary);
-}
+        /* Header Re-Structure */
+        .detail-header {
+            display: flex;
+            flex-direction: row;
+            /* Horizontal alignment */
+            align-items: flex-start;
+            /* Align top */
+            gap: 3rem;
+            /* Space between Icon and Text */
+            margin-bottom: 4rem;
+        }
 
-.detail-info {
-flex: 1; /* Take remaining space */
-display: flex;
-flex-direction: column;
-justify-content: center;
-}
+        .detail-icon-container {
+            flex-shrink: 0;
+            /* Don't shrink the icon */
+            background: rgba(255, 255, 255, 0.05);
+            /* Container background from screenshot */
+            border-radius: 20px;
+            border: 1px solid var(--card-border);
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.detail-title {
-font-size: 2.5rem;
-font-weight: 700;
-margin-bottom: 1rem;
-color: var(--text-primary);
-line-height: 1.2;
-}
+        .detail-icon-container i {
+            font-size: 3.5rem;
+            /* Larger icon */
+            color: var(--text-primary);
+        }
 
-.detail-tags {
-display: flex;
-flex-wrap: wrap;
-gap: 0.8rem;
-margin-bottom: 1.5rem; /* Tags below title */
-}
+        .detail-info {
+            flex: 1;
+            /* Take remaining space */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-.detail-tag {
-background: rgba(255, 255, 255, 0.08); /* Pill style */
-color: var(--text-secondary);
-padding: 0.4rem 1rem;
-border-radius: 99px;
-font-size: 0.85rem;
-font-weight: 500;
-border: 1px solid rgba(255, 255, 255, 0.05);
-}
+        .detail-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
 
-.detail-subtitle {
-font-size: 1.1rem;
-color: var(--text-secondary);
-line-height: 1.6;
-margin-top: 0.5rem; /* Space after tags if needed, or before */
-}
+        .detail-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+            /* Tags below title */
+            margin-top: 1rem;
+            /* Added margin for spacing from description/title on detail page ONLY */
+        }
 
-/* Content Area */
-.detail-content {
-font-size: 1.1rem;
-line-height: 1.8;
-color: #d4d4d8;
-margin-bottom: 3rem;
-max-width: 800px;
-}
+        .detail-tag {
+            background: rgba(255, 255, 255, 0.08);
+            /* Pill style */
+            color: var(--text-secondary);
+            padding: 0.4rem 1rem;
+            border-radius: 99px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
 
-/* Highlights */
-.tech-highlights h3 {
-font-size: 1.5rem;
-font-weight: 600;
-margin-bottom: 1.5rem;
-color: var(--text-primary);
-}
+        .detail-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-top: 0.5rem;
+            /* Space after tags if needed, or before */
+        }
 
-.tech-list {
-list-style: none;
-padding: 0;
-margin-bottom: 4rem;
-}
+        /* Content Area */
+        .detail-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #d4d4d8;
+            margin-bottom: 3rem;
+            max-width: 800px;
+        }
 
-.tech-list li {
-position: relative;
-padding-left: 1.5rem;
-margin-bottom: 1rem;
-color: var(--text-secondary);
-font-size: 1.05rem;
-}
+        /* Highlights */
+        .tech-highlights h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
 
-.tech-list li::before {
-content: '•';
-position: absolute;
-left: 0;
-color: var(--accent-color);
-font-weight: bold;
-font-size: 1.2rem;
-}
+        .tech-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 4rem;
+        }
 
-/* Back Link */
-.back-link {
-display: inline-flex;
-align-items: center;
-gap: 0.5rem;
-color: var(--text-secondary);
-text-decoration: none;
-margin-bottom: 4rem; /* More space */
-font-weight: 500;
-transition: color 0.2s;
-font-size: 0.95rem;
-}
+        .tech-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
 
-.back-link:hover {
-color: var(--text-primary);
-}
+        .tech-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
 
-/* Responsive adjustment */
-@media (max-width: 768px) {
-.detail-header {
-flex-direction: column; /* Stack on mobile */
-align-items: center;
-text-align: center;
-gap: 2rem;
-}
+        /* Back Link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-bottom: 4rem;
+            /* More space */
+            font-weight: 500;
+            transition: color 0.2s;
+            font-size: 0.95rem;
+        }
 
-.detail-icon-container {
-padding: 1.5rem;
-}
+        .back-link:hover {
+            color: var(--text-primary);
+        }
 
-.detail-tags {
-justify-content: center;
-}
-}
+        .detail-footer-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: flex-start;
+            /* Left align */
+            padding-top: 3rem;
+            border-top: 1px solid var(--card-border);
+        }
+
+        .detail-footer-icon {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            transition: all 0.2s;
+            padding: 0.8rem;
+            border-radius: 50%;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+        }
+
+        .detail-footer-icon:hover {
+            color: var(--text-primary);
+            border-color: var(--text-secondary);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive adjustment */
+        @media (max-width: 768px) {
+            .detail-header {
+                flex-direction: column;
+                /* Stack on mobile */
+                align-items: center;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .detail-icon-container {
+                padding: 1.5rem;
+            }
+
+            .detail-tags {
+                justify-content: center;
+            }
+
+            .detail-footer-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-glow"></div>
+
+    <div class="detail-container">
+        <a href="projects.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+
+        <main id="project-detail-content">
+            <!-- Content will be injected here by JS -->
+        </main>
+    </div>
+
+    <!-- Script to load project details -->
+    <script type="module" src="js/project-detail.js"></script>
+</body>
+
+</html>
