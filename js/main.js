@@ -38,37 +38,41 @@ document.addEventListener('DOMContentLoaded', () => {
             // Create tags HTML
             const tagsHtml = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
 
-            // Build links section (Only for Projects Page / List View)
+            // Build links section (Read More always, GitHub only for List View)
             let linksHtml = '';
 
-            if (isListView) {
+            // Start container if we have any links to show
+            if ((project.github && isListView) || project.learnMore) {
+                linksHtml += '<div class="project-links-container">';
+            }
+
+            // GitHub link (only in List View)
+            if (isListView && project.github) {
                 // Determine GitHub display text (User/Repo-Slug)
                 const slug = project.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
                 const repoName = `Mzaex7/${slug}`;
 
-                if (project.github || project.learnMore) {
-                    linksHtml += '<div class="project-links-container">';
+                linksHtml += `
+                    <a href="${project.github}" class="github-repo-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                        <span>${repoName}</span>
+                        <i class="fas fa-arrow-up-right-from-square" style="font-size: 0.8em; margin-left: auto;"></i>
+                    </a>
+                `;
+            }
 
-                    if (project.github) {
-                        linksHtml += `
-                            <a href="${project.github}" class="github-repo-link" target="_blank">
-                                <i class="fab fa-github"></i>
-                                <span>${repoName}</span>
-                                <i class="fas fa-arrow-up-right-from-square" style="font-size: 0.8em; margin-left: auto;"></i>
-                            </a>
-                        `;
-                    }
+            // Read More link (always visible if available)
+            if (project.learnMore) {
+                linksHtml += `
+                    <a href="project-detail.html?id=${project.id}" class="learn-more-link">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                `;
+            }
 
-                    if (project.learnMore) {
-                        linksHtml += `
-                            <a href="project-detail.html?id=${project.id}" class="learn-more-link">
-                                Read More <i class="fas fa-arrow-right"></i>
-                            </a>
-                        `;
-                    }
-
-                    linksHtml += '</div>';
-                }
+            // Close container if we opened it
+            if ((project.github && isListView) || project.learnMore) {
+                linksHtml += '</div>';
             }
 
             card.innerHTML = `
