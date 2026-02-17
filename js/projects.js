@@ -1,5 +1,21 @@
 const projects = [
     {
+        id: "brewref",
+        title: "BrewRef — Specialty Coffee App",
+        description: "Cross-platform mobile app for espresso brew logging, analysis, and AI-powered optimization. Built with Expo, React Native, and TypeScript following an 'Industrial Zen' design.",
+        tags: ["Expo", "React Native", "TypeScript", "AI", "Mobile"],
+        github: "https://github.com/Mzaex7/Coffee-app",
+        learnMore: true,
+        detailedDescription: "BrewRef digitizes the entire espresso brewing workflow: recipe capture (Dose, Yield, Time, Temp, Grind), sensory profiling via a custom Taste Wheel, equipment management for beans and grinders, and a KI-powered Brew Doctor (Gemini) that generates structured optimization advice. The app follows a three-layer architecture (Presentation → Domain → Data) with Singleton, Builder, Adapter, and Factory patterns. It runs offline-first on iOS, Android, and Web from a single codebase.",
+        highlights: [
+            "Three-layer architecture with Repository, Singleton, Builder, Adapter, and Factory patterns",
+            "AI-powered Brew Doctor using Google Gemini for contextual brew analysis",
+            "Custom UI components: SVG Taste Wheel, snap-scroll Grind Selector, animated Cup-Filling loader",
+            "Offline-first with expo-sqlite (native) and localStorage adapter (web)",
+            "Industrial Zen design system via Shopify Restyle with Inter & JetBrains Mono typography"
+        ]
+    },
+    {
         id: "social-networks-analysis",
         title: "Social Networks Analysis",
         description: "Data cleaning, visualization, and scientific writing using R. Analysis of complex network structures.",
