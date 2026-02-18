@@ -18,6 +18,40 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update Page Title
     document.title = `${project.title} | Max Zeitler`;
 
+    // --- Dynamic SEO meta tag injection ---
+    const BASE_URL = 'https://mzaex7.github.io/Project-list';
+    const pageUrl = `${BASE_URL}/project-detail.html?id=${project.id}`;
+    const imageUrl = `${BASE_URL}/assets/images/profile.jpeg`;
+    const metaDesc = project.description;
+
+    function setMeta(attr, key, content) {
+        let el = document.querySelector(`meta[${attr}="${key}"]`);
+        if (!el) {
+            el = document.createElement('meta');
+            el.setAttribute(attr, key);
+            document.head.appendChild(el);
+        }
+        el.setAttribute('content', content);
+    }
+
+    // Meta description
+    setMeta('name', 'description', metaDesc);
+
+    // Open Graph
+    setMeta('property', 'og:title', `${project.title} | Max Zeitler`);
+    setMeta('property', 'og:description', metaDesc);
+    setMeta('property', 'og:url', pageUrl);
+    setMeta('property', 'og:image', imageUrl);
+
+    // Twitter Card
+    setMeta('name', 'twitter:title', `${project.title} | Max Zeitler`);
+    setMeta('name', 'twitter:description', metaDesc);
+    setMeta('name', 'twitter:image', imageUrl);
+
+    // Canonical URL
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.href = pageUrl;
+
     function getProjectIcon(project) {
         // Same logic as main.js
         const text = (project.title + " " + project.tags.join(" ")).toLowerCase();

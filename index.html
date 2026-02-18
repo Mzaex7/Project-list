@@ -1,12 +1,74 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Max Zeitler | Portfolio</title>
+    <title>Max Zeitler | Portfolio — Data Science, AI & Software Engineering</title>
     <meta name="description"
-        content="Portfolio von Max Zeitler - Dualer Student Wirtschaftsinformatik. Projekte in Data Science, AI, Web Development und mehr.">
+        content="Portfolio of Max Zeitler — Dual Student in Business Informatics specializing in Data Science, AI, LLMs, RAG, and Digital Twins. Projects and experience at Hewlett Packard Enterprise.">
+    <link rel="canonical" href="https://mzaex7.github.io/Project-list/index.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Max Zeitler | Portfolio — Data Science, AI & Software Engineering">
+    <meta property="og:description"
+        content="Portfolio of Max Zeitler — Dual Student in Business Informatics specializing in Data Science, AI, LLMs, RAG, and Digital Twins.">
+    <meta property="og:url" content="https://mzaex7.github.io/Project-list/index.html">
+    <meta property="og:image" content="https://mzaex7.github.io/Project-list/assets/images/profile.jpeg">
+    <meta property="og:site_name" content="Max Zeitler Portfolio">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Max Zeitler | Portfolio">
+    <meta name="twitter:description"
+        content="Data Science, AI, LLMs, RAG, Digital Twins — Projects and experience at Hewlett Packard Enterprise.">
+    <meta name="twitter:image" content="https://mzaex7.github.io/Project-list/assets/images/profile.jpeg">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    [
+        {
+            "@context": "https://schema.org",
+            "@type": "ProfilePage",
+            "mainEntity": {
+                "@type": "Person",
+                "name": "Max Zeitler",
+                "alternateName": "M Zeitler",
+                "url": "https://mzaex7.github.io/Project-list/",
+                "image": "https://mzaex7.github.io/Project-list/assets/images/profile.jpeg",
+                "jobTitle": "Dual Student Data Science",
+                "description": "Data Science student specializing in AI, LLMs, RAG, and Digital Twins at Hewlett Packard Enterprise and DHBW Stuttgart.",
+                "worksFor": {
+                    "@type": "Organization",
+                    "name": "Hewlett Packard Enterprise"
+                },
+                "alumniOf": [
+                    {
+                        "@type": "CollegeOrUniversity",
+                        "name": "DHBW Stuttgart"
+                    },
+                    {
+                        "@type": "CollegeOrUniversity",
+                        "name": "University College Dublin"
+                    }
+                ],
+                "knowsAbout": ["Data Science", "Artificial Intelligence", "LLMs", "RAG", "Digital Twins", "Synthetic Data", "Python", "Machine Learning"],
+                "sameAs": [
+                    "https://github.com/Mzaex7",
+                    "https://www.linkedin.com/in/max-zeitler"
+                ]
+            }
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Max Zeitler Portfolio",
+            "url": "https://mzaex7.github.io/Project-list/"
+        }
+    ]
+    </script>
+
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <link rel="stylesheet" href="css/style.css">
 
@@ -18,7 +80,7 @@
     <div class="background-glow"></div>
 
     <!-- Navbar -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
         <div class="nav-container">
             <ul class="nav-links">
                 <li><a href="index.html" class="nav-link active">Home</a></li>
@@ -34,6 +96,9 @@
             <div class="header-content">
                 <h1>Max Zeitler</h1>
                 <p class="subtitle">Dual Student Data Science • AI Research • Solutions Engineering</p>
+                <p class="sr-only">Max Zeitler (M Zeitler) is a Data Science and AI student at DHBW Stuttgart, currently
+                    working at Hewlett Packard Enterprise. His work spans LLM benchmarking, Digital Twins, RAG systems,
+                    and full-stack software engineering.</p>
 
                 <div class="bio-list">
                     <div class="bio-item">
@@ -58,19 +123,20 @@
                 </div>
 
                 <div class="social-links">
-                    <a href="https://github.com/Mzaex7" class="social-icon" title="GitHub" target="_blank"><i
-                            class="fab fa-github"></i></a>
+                    <a href="https://github.com/Mzaex7" class="social-icon" title="GitHub" target="_blank"
+                        rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/max-zeitler" class="social-icon" title="LinkedIn"
-                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                        target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
                     <a href="mailto:zeitler.max04@gmail.com" class="social-icon" title="Email"><i
                             class="fas fa-envelope"></i></a>
-                    <a href="CV_Max_Zeitler.pdf" class="social-icon" title="Resume" target="_blank"><i
-                            class="fas fa-file-alt"></i></a>
+                    <a href="CV_Max_Zeitler.pdf" class="social-icon" title="Resume" target="_blank"
+                        rel="noopener noreferrer"><i class="fas fa-file-alt"></i></a>
                 </div>
             </div>
 
             <div class="profile-image-container">
-                <img src="assets/images/profile.jpeg" alt="Max Zeitler" class="profile-image">
+                <img src="assets/images/profile.jpeg" alt="Max Zeitler — Data Science & AI Portfolio"
+                    class="profile-image">
             </div>
         </header>
 
@@ -142,6 +208,37 @@
             <h2 class="section-title">Selected Projects</h2>
             <main id="project-grid" class="project-grid" data-limit="6">
                 <!-- Limit set to 6 via data-attribute -->
+                <noscript>
+                    <article>
+                        <h3>BrewRef — Specialty Coffee App</h3>
+                        <p>Cross-platform mobile app for espresso brew logging, analysis, and AI-powered optimization.
+                            Built with Expo, React Native, and TypeScript.</p>
+                    </article>
+                    <article>
+                        <h3>Social Networks Analysis</h3>
+                        <p>Data cleaning, visualization, and scientific writing using R. Analysis of complex network
+                            structures.</p>
+                    </article>
+                    <article>
+                        <h3>Rotten Tomatoes Clone</h3>
+                        <p>Development of a complete database architecture for review aggregation. Introduction to
+                            relational databases and SQL programming.</p>
+                    </article>
+                    <article>
+                        <h3>Corporate Website markzeitler.de</h3>
+                        <p>Development of a modern web presence for a company. Implemented with React.</p>
+                    </article>
+                    <article>
+                        <h3>Environmental Learning Platform</h3>
+                        <p>Case study: Building an interactive learning platform on environmental protection. Agile
+                            project management (Scrum) and Next.js.</p>
+                    </article>
+                    <article>
+                        <h3>Data Analysis &amp; Visualization</h3>
+                        <p>Data analysis project including scientific paper and creation of an interactive dashboard
+                            with Streamlit and Python.</p>
+                    </article>
+                </noscript>
             </main>
 
             <div class="view-all-container">
@@ -152,14 +249,14 @@
 
         <footer>
             <div class="social-links" style="margin-bottom: 0;">
-                <a href="https://github.com/Mzaex7" class="social-icon" title="GitHub" target="_blank"><i
-                        class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/max-zeitler" class="social-icon" title="LinkedIn"
-                    target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Mzaex7" class="social-icon" title="GitHub" target="_blank"
+                    rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/max-zeitler" class="social-icon" title="LinkedIn" target="_blank"
+                    rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
                 <a href="mailto:zeitler.max04@gmail.com" class="social-icon" title="Email"><i
                         class="fas fa-envelope"></i></a>
-                <a href="CV_Max_Zeitler.pdf" class="social-icon" title="Resume" target="_blank"><i
-                        class="fas fa-file-alt"></i></a>
+                <a href="CV_Max_Zeitler.pdf" class="social-icon" title="Resume" target="_blank"
+                    rel="noopener noreferrer"><i class="fas fa-file-alt"></i></a>
             </div>
         </footer>
     </div>
