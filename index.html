@@ -86,11 +86,21 @@
     ]
     </script>
 
+    <!-- Preconnect to third-party origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Awesome: async load to avoid render-blocking -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
 </head>
 
 <body>
@@ -153,7 +163,7 @@
 
             <div class="profile-image-container">
                 <img src="assets/images/profile.jpeg" alt="Max Zeitler — Data Science & AI Portfolio"
-                    class="profile-image">
+                    class="profile-image" width="300" height="300" loading="eager">
             </div>
         </header>
 
@@ -163,7 +173,8 @@
             <div class="experience-list">
 
                 <div class="experience-card">
-                    <div class="company-logo"><img src="assets/images/hpe.png" alt="HPE"></div>
+                    <div class="company-logo"><img src="assets/images/hpe.png" alt="HPE" width="200" height="57"
+                            loading="lazy"></div>
                     <div class="exp-content">
                         <h3>Hewlett Packard Enterprise (HPE)</h3>
                         <p class="exp-role">AI Solutions - Private Cloud AI (PCAI)</p>
@@ -175,7 +186,8 @@
                 </div>
 
                 <div class="experience-card">
-                    <div class="company-logo"><img src="assets/images/hpe.png" alt="HPE"></div>
+                    <div class="company-logo"><img src="assets/images/hpe.png" alt="HPE" width="200" height="57"
+                            loading="lazy"></div>
                     <div class="exp-content">
                         <h3>Hewlett Packard Enterprise (HPE)</h3>
                         <p class="exp-role">AI Excellence Center Central Europe</p>
@@ -186,7 +198,8 @@
                 </div>
 
                 <div class="experience-card">
-                    <div class="company-logo"><img src="assets/images/hpe.png" alt="HPE"></div>
+                    <div class="company-logo"><img src="assets/images/hpe.png" alt="HPE" width="200" height="57"
+                            loading="lazy"></div>
                     <div class="exp-content">
                         <h3>Hewlett Packard Enterprise (HPE)</h3>
                         <p class="exp-role">Data & AI Consulting</p>
@@ -197,7 +210,8 @@
                 </div>
 
                 <div class="experience-card">
-                    <div class="company-logo"><img src="assets/images/engineering.png" alt="Formula Student"></div>
+                    <div class="company-logo"><img src="assets/images/engineering.png" alt="Formula Student" width="160"
+                            height="160" loading="lazy"></div>
                     <div class="exp-content">
                         <h3>DHBW Engineering e.V. (Formula Student)</h3>
                         <p class="exp-role">Data Engineer</p>
@@ -208,7 +222,8 @@
                 </div>
 
                 <div class="experience-card">
-                    <div class="company-logo"><img src="assets/images/dhbw.png" alt="DHBW"></div>
+                    <div class="company-logo"><img src="assets/images/dhbw.png" alt="DHBW" width="80" height="80"
+                            loading="lazy"></div>
                     <div class="exp-content">
                         <h3>DHBW Stuttgart</h3>
                         <p class="exp-role">University Board Member & Student Representative</p>
