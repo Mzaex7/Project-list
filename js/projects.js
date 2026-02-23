@@ -212,15 +212,17 @@ const projects = [
     },
     {
         id: "beer-xai",
-        title: "Beer XAI Research",
-        description: "Research project in Explainable AI (XAI) using SHAP values on the example of beer data.",
-        tags: ["XAI", "SHAP", "Research", "ML"],
+        title: "Semantic Feature Grouping for XAI",
+        description: "Research paper: Semantically-Constrained Feature Grouping for Robust Explainable AI — addressing SHAP's limitations in correlated datasets using beer sensory data.",
+        tags: ["XAI", "SHAP", "DSR", "Python", "Research", "LLM"],
         learnMore: true,
-        detailedDescription: "Application of Explainable AI methods (SHAP) to make predictions of an ML model for beer classification transparent.",
+        detailedDescription: "A Design-Science-Research paper developing a Semantic-Grouped-SHAP approach that bridges the gap between mathematical faithfulness and practical actionability in Explainable AI. Standard SHAP assumes feature independence, which produces misleading explanations in domains with high multicollinearity — such as beer sensory evaluation, where attributes like fruitiness and sweetness are psychologically coupled. The paper extends GroupSegment-SHAP (GS-SHAP) by integrating domain knowledge via a semantic affinity matrix (constructed with LLM reasoning and vector embeddings) alongside statistical dependency (HSIC). A hyperparameter ω controls the trade-off between statistical and semantic grouping. Evaluation compares three variants — ungrouped SHAP, purely statistical grouping, and semantic-hybrid grouping — using coherence metrics and LLM-based expert evaluation. Co-authored with four colleagues, submitted February 2026.",
         highlights: [
-            "Training of XGBoost models",
-            "Calculation and visualization of SHAP values",
-            "Interpretation of feature importance"
+            "Semantic-Grouped-SHAP: hybrid feature grouping combining HSIC statistical dependency with LLM-derived semantic affinity",
+            "Addresses perceptual multicollinearity in beer sensory panel data (correlated taste attributes)",
+            "Hyperparameter ω for systematic trade-off between faithfulness and actionability",
+            "LLM-based expert evaluation for assessing domain-level interpretability",
+            "Design-Science-Research methodology with three DSR cycles (Relevance, Rigor, Design)"
         ]
     },
     {
