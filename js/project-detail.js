@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.title = `${project.title} | Max Zeitler`;
 
     // --- Dynamic SEO meta tag injection ---
-    const BASE_URL = 'https://mzaex7.github.io/Project-list';
+    const BASE_URL = 'https://mzeitler.com';
     const pageUrl = `${BASE_URL}/project-detail.html?id=${project.id}`;
     const imageUrl = `${BASE_URL}/assets/images/profile.jpeg`;
     const metaDesc = project.description;

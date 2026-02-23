@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mzaex7.github.io/Project-list/sitemap.xml
+Sitemap: https://mzeitler.com/sitemap.xml

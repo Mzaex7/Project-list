@@ -1,109 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://mzaex7.github.io/Project-list/</loc>
+        <loc>https://mzeitler.com/</loc>
         <lastmod>2026-02-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://mzaex7.github.io/Project-list/projects.html</loc>
+        <loc>https://mzeitler.com/projects.html</loc>
         <lastmod>2026-02-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mzaex7.github.io/Project-list/project-detail.html?id=brewref</loc>
+        <loc>https://mzeitler.com/project-detail.html?id=brewref</loc>
         <lastmod>2026-02-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://mzaex7.github.io/Project-list/project-detail.html?id=social-networks-analysis</loc>
+        <loc>https://mzeitler.com/project-detail.html?id=social-networks-analysis</loc>
         <lastmod>2026-02-18</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://mzaex7.github.io/Project-list/project-detail.html?id=rotten-tomatoes-clone</loc>
+        <loc>https://mzeitler.com/project-detail.html?id=rotten-tomatoes-clone</loc>
         <lastmod>2026-02-18</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://mzaex7.github.io/Project-list/project-detail.html?id=markzeitler-website</loc>
+        <loc>https://mzeitler.com/project-detail.html?id=markzeitler-website</loc>
         <lastmod>2026-02-18</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://mzaex7.github.io/Project-list/project-detail.html?id=umwelt-lernplattform</loc>
+        <loc>https://mzeitler.com/project-detail.html?id=umwelt-lernplattform</loc>
         <lastmod>2026-02-18</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://mzaex7.github.io/Project-list/project-detail.html?id=data-analysis-viz</loc>
+        <loc>https://mzeitler.com/project-detail.html?id=data-analysis-viz</loc>
         <lastmod>2026-02-18</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://mzaex7.github.io/Project-list/project-detail.html?id=llm-benchmark</loc>
+        <loc>https://mzeitler.com/project-detail.html?id=llm-benchmark</loc>
         <lastmod>2026-02-18</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://mzaex7.github.io/Project-list/project-detail.html?id=inference-dashboards</loc>
+        <loc>https://mzeitler.com/project-detail.html?id=inference-dashboards</loc>
         <lastmod>2026-02-18</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://mzaex7.github.io/Project-list/project-detail.html?id=digital-twin-robotics</loc>
+        <loc>https://mzeitler.com/project-detail.html?id=digital-twin-robotics</loc>
         <lastmod>2026-02-18</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://mzaex7.github.io/Project-list/project-detail.html?id=mcp-protocol</loc>
+        <loc>https://mzeitler.com/project-detail.html?id=mcp-protocol</loc>
         <lastmod>2026-02-18</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://mzaex7.github.io/Project-list/project-detail.html?id=pcai-analysis</loc>
+        <loc>https://mzeitler.com/project-detail.html?id=pcai-analysis</loc>
         <lastmod>2026-02-18</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://mzaex7.github.io/Project-list/project-detail.html?id=data-catalog-eval</loc>
+        <loc>https://mzeitler.com/project-detail.html?id=data-catalog-eval</loc>
         <lastmod>2026-02-18</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://mzaex7.github.io/Project-list/project-detail.html?id=scrabble-ai</loc>
+        <loc>https://mzeitler.com/project-detail.html?id=scrabble-ai</loc>
         <lastmod>2026-02-18</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://mzaex7.github.io/Project-list/project-detail.html?id=formula-student-big-data</loc>
+        <loc>https://mzeitler.com/project-detail.html?id=formula-student-big-data</loc>
         <lastmod>2026-02-18</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://mzaex7.github.io/Project-list/project-detail.html?id=data-mgmt-workloads</loc>
+        <loc>https://mzeitler.com/project-detail.html?id=data-mgmt-workloads</loc>
         <lastmod>2026-02-18</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://mzaex7.github.io/Project-list/project-detail.html?id=beer-xai</loc>
+        <loc>https://mzeitler.com/project-detail.html?id=beer-xai</loc>
         <lastmod>2026-02-18</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
