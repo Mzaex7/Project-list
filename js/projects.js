@@ -18,29 +18,33 @@ const projects = [
     {
         id: "social-networks-analysis",
         title: "Social Networks Analysis",
-        description: "Data cleaning, visualization, and scientific writing using R. Analysis of complex network structures.",
-        tags: ["R", "Data Viz", "Science"],
+        description: "Influence of competitive structures on Data Science salary levels — a Social Network Analysis using R (igraph, visNetwork, ggplot2).",
+        tags: ["R", "igraph", "Network Analysis", "Data Viz", "Science"],
         learnMore: true,
         github: "https://github.com/Mzaex7",
-        detailedDescription: "In this project, a comprehensive analysis of social network structures was conducted using R. The focus was on cleaning raw data, visualizing complex graphs, and statistically evaluating network metrics.",
+        detailedDescription: "A scientific study investigating how a company's position and centrality within a competitive network influences salary structures for Data Science positions. Based on a Kaggle/Glassdoor dataset of 742 US job postings, a competition network was constructed (nodes = companies, edges = competitors) and analyzed using centrality metrics (Betweenness, Degree, Eigenvector) and community detection (Louvain algorithm). Key finding: Betweenness centrality — a company's role as a strategic intermediary — showed the strongest correlation with higher salaries, while industry affiliation (IT, Software) within central clusters was the most significant factor. Geographic hotspots like NYC and SF paid approx. $13.6k more on average.",
         highlights: [
-            "Implementation of community detection algorithms",
-            "Visualization with ggplot2 and igraph",
-            "Calculation of centrality measures (Betweenness, Eigenvector)"
+            "Competition network built from Glassdoor data (742 job postings, 28 features)",
+            "Centrality analysis: Betweenness, Degree, and Eigenvector centrality via igraph",
+            "Community detection with the Louvain algorithm (79 clusters identified)",
+            "Interactive network visualization with visNetwork",
+            "Exploratory salary analysis across clusters, industries, and geographies"
         ]
     },
     {
         id: "rotten-tomatoes-clone",
-        title: "Rotten Tomatoes Clone",
-        description: "Development of a complete database architecture for review aggregation. Introduction to relational databases and SQL programming.",
-        tags: ["SQL", "DB Architecture", "Relational DB"],
+        title: "Bitter Melons — Review Aggregation DB",
+        description: "An independent alternative to Rotten Tomatoes: a BCNF-normalized database architecture for aggregating critic and user reviews without media-conglomerate conflicts of interest.",
+        tags: ["SQL", "DB Architecture", "BCNF", "Stored Procedures"],
         github: "https://github.com/Mzaex7",
         learnMore: true,
-        detailedDescription: "Development of a full clone of the Rotten Tomatoes database structure. The goal was to deeply understand relational database concepts and write performant SQL queries.",
+        detailedDescription: "Bitter Melons is a database project designed as an independent, conflict-free alternative to Rotten Tomatoes. The system aggregates professional critic scores into a 'Sweetness Index' (equivalent to the Tomatometer) and verified user reviews into a 'Melon Meter' (audience score). The SQL database is fully normalized to BCNF, using Views for complex metric computation and Stored Procedures for administrative tasks such as UpdateUserReview. The project demonstrates end-to-end relational database design from ER modeling through query optimization.",
         highlights: [
-            "ER modeling of complex relationships between movies, critics, and users",
-            "Optimization of SQL queries for fast aggregation",
-            "Implementation of stored procedures and triggers"
+            "BCNF-normalized relational schema for movies, critics, users, and reviews",
+            "Sweetness Index: aggregated professional critic score (Tomatometer equivalent)",
+            "Melon Meter: verified audience rating system",
+            "Views for complex metric aggregation and Stored Procedures for admin workflows",
+            "ER modeling and SQL query optimization"
         ]
     },
     {
@@ -72,29 +76,33 @@ const projects = [
     },
     {
         id: "data-analysis-viz",
-        title: "Data Analysis & Visualization",
-        description: "Data analysis project including scientific paper and creation of an interactive dashboard with Streamlit and Python.",
-        tags: ["Python", "Streamlit", "Data Science"],
+        title: "Germany's Role in MotoGP",
+        description: "Data visualization project analyzing Germany's performance in MotoGP motorcycle racing compared to dominant nations like Spain and Italy.",
+        tags: ["Python", "Data Viz", "Streamlit", "Data Science"],
         github: "https://github.com/Mzaex7",
         learnMore: true,
-        detailedDescription: "End-to-end data science project: From data collection and analysis to presentation in an interactive dashboard.",
+        detailedDescription: "A data-driven analysis of Germany's role in MotoGP motorcycle racing. Despite fielding 53 riders historically, German riders achieve only a fraction of the success seen by Spain (118 riders) and Italy (130 riders). The study identifies key success factors: Spain and Italy dominate through higher rider counts and more home races (Spain with 4 circuits, Italy with 2 in the 2019 calendar). A detailed rider comparison highlights Marc Márquez (Spain) as an exceptional talent who dominates almost all season-based categories even against legends like Valentino Rossi. Results are presented via an interactive Streamlit dashboard and a scientific paper.",
         highlights: [
-            "Data cleaning with Pandas",
-            "Interactive dashboard with Streamlit",
-            "Exploratory Data Analysis (EDA)"
+            "Comparative analysis of rider success rates across Germany, Spain, and Italy",
+            "Identification of structural advantages: home races and rider pipeline depth",
+            "Detailed rider comparison (Márquez vs. Rossi) across season-based metrics",
+            "Interactive Streamlit dashboard for data exploration",
+            "Scientific paper with data-driven conclusions"
         ]
     },
     {
         id: "llm-benchmark",
-        title: "LLM Benchmark Framework",
-        description: "Framework for performance benchmarking of ML Inference Software (HPE, Ollama, BentoML, vLLM, Triton). Comparison of KPIs such as latency and evaluation.",
+        title: "LLM Endpoint Benchmarking Suite",
+        description: "A framework for benchmarking LLM inference endpoints with metrics like TTFT, TPOT, throughput, and latency. Supports parallel tests and OpenAI-compatible APIs.",
         tags: ["Python", "LLM", "AI", "Benchmarking"],
         learnMore: true,
-        detailedDescription: "Development of an automated framework to objectively compare various LLM inference servers regarding latency, throughput, and resource utilization.",
+        detailedDescription: "A comprehensive benchmarking framework designed to evaluate LLM inference endpoints across key performance metrics: Time to First Token (TTFT), Time Per Output Token (TPOT), end-to-end throughput, and request latency. The suite supports parallel test execution and any OpenAI-compatible endpoint, enabling objective comparisons between inference servers like HPE's PCAI, Ollama, BentoML, vLLM, and Triton. It ships with a curated test suite of 18 prompts across varying lengths and complexity levels, plus built-in visualization for result analysis.",
         highlights: [
-            "Comparison of vLLM, TGI, and Triton Server",
-            "Automated report generation",
-            "Integration with Grafana for real-time monitoring"
+            "Key metrics: TTFT, TPOT, throughput, and latency benchmarking",
+            "18 curated prompts across varying complexity and length tiers",
+            "Parallel test execution for concurrent load simulation",
+            "Support for any OpenAI-compatible inference endpoint",
+            "Built-in result visualization and automated reporting"
         ]
     },
     {
@@ -213,6 +221,21 @@ const projects = [
             "Training of XGBoost models",
             "Calculation and visualization of SHAP values",
             "Interpretation of feature importance"
+        ]
+    },
+    {
+        id: "mario-party-balloon-platzen",
+        title: "Mario Party Clone — Balloon-Platzen",
+        description: "Team project: a Mario Party copy in Java. My mini-game 'Balloon-Platzen' focuses on multithreading — pop balloons before they hit the spikes.",
+        tags: ["Java", "JavaFX", "Threads", "Game Dev", "Team Project"],
+        learnMore: true,
+        detailedDescription: "As part of a team project, we built a Mario Party clone in Java. My contribution was the 'Balloon-Platzen' mini-game — a speed-based challenge where the player must click to pop balloons before they float up to spikes at the top of the screen. The focus lies on parallel thread management: each balloon is driven by its own thread for independent movement and rendering. Techniques include inheritance, data encapsulation, lambda expressions, streams, and a Bubble-Sort algorithm that orders balloons by spawn speed to create progressively increasing difficulty.",
+        highlights: [
+            "One thread per balloon for independent movement and rendering",
+            "Bubble-Sort for progressive difficulty scaling by spawn speed",
+            "JavaFX UI with inheritance and data encapsulation",
+            "Lambda expressions and Streams for concise game logic",
+            "BalloonGame class manages core game loop and thread lifecycle"
         ]
     }
 ];
