@@ -91,8 +91,11 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     }
 
+    // Email obfuscation: assemble address from parts so bots cannot scrape it
+    const _u = 'zeitler.max04', _d = 'gmail.com';
+    const _addr = _u + '@' + _d;
     footerLinks += `
-        <a href="mailto:zeitler.max04@gmail.com?subject=Inquiry about ${project.title}" class="detail-footer-icon" title="Contact about this project">
+        <a href="mail${''}to:${_addr}?subject=Inquiry about ${project.title}" class="detail-footer-icon" title="Contact about this project">
             <i class="fas fa-envelope"></i>
         </a>
     `;

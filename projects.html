@@ -201,14 +201,22 @@
                     rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/max-zeitler" class="social-icon" title="LinkedIn" target="_blank"
                     rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:zeitler.max04@gmail.com" class="social-icon" title="Email"><i
-                        class="fas fa-envelope"></i></a>
+                <a href="#" class="social-icon" title="Email" data-email-link><i class="fas fa-envelope"></i></a>
                 <a href="CV_Max_Zeitler.pdf" class="social-icon" title="Resume" target="_blank"
                     rel="noopener noreferrer"><i class="fas fa-file-alt"></i></a>
             </div>
         </footer>
     </div>
 
+    <!-- Email obfuscation: address is assembled at runtime so bots cannot scrape it -->
+    <script>
+        (function () {
+            var u = 'zeitler.max04', d = 'gmail.com';
+            document.querySelectorAll('[data-email-link]').forEach(function (a) {
+                a.href = 'mail' + 'to:' + u + '@' + d;
+            });
+        })();
+    </script>
     <script type="module" src="js/main.js"></script>
 </body>
 
