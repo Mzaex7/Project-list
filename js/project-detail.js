@@ -1,11 +1,12 @@
 import projects from './projects.js';
+import { getProjectIcon } from './project-utils.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const detailContent = document.getElementById('project-detail-content');
+    const urlParams = new URLSearchParams(window.location.search);
     if (!detailContent) return;
 
     // Get project ID from URL query param
-    const urlParams = new URLSearchParams(window.location.search);
     const projectId = urlParams.get('id');
 
     const project = projects.find(p => p.id === projectId);
@@ -52,19 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) canonical.href = pageUrl;
 
-    function getProjectIcon(project) {
-        // Same logic as main.js
-        const text = (project.title + " " + project.tags.join(" ")).toLowerCase();
-        if (text.includes('data') || text.includes('analysis')) return '<i class="fas fa-chart-bar"></i>';
-        if (text.includes('game') || text.includes('scrabble')) return '<i class="fas fa-gamepad"></i>';
-        if (text.includes('database') || text.includes('sql')) return '<i class="fas fa-database"></i>';
-        if (text.includes('ai') || text.includes('gpt') || text.includes('llm') || text.includes('learning')) return '<i class="fas fa-brain"></i>';
-        if (text.includes('react') || text.includes('web')) return '<i class="fas fa-globe"></i>';
-        if (text.includes('robot') || text.includes('twin')) return '<i class="fas fa-robot"></i>';
-        if (text.includes('security')) return '<i class="fas fa-shield-alt"></i>';
-        return '<i class="fas fa-code"></i>';
-    }
-
     const iconHtml = getProjectIcon(project);
 
     // Generate Highlights HTML
@@ -85,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (project.github) {
         footerLinks += `
-            <a href="${project.github}" class="detail-footer-icon" title="View Source on GitHub" target="_blank">
+            <a href="${project.github}" class="detail-footer-icon" title="View Source on GitHub" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-github"></i>
             </a>
         `;
@@ -101,12 +89,11 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
 
     footerLinks += `
-        <a href="CV_Max_Zeitler.pdf" class="detail-footer-icon" title="View Resume" target="_blank">
+        <a href="CV_Max_Zeitler.pdf" class="detail-footer-icon" title="View Resume" target="_blank" rel="noopener noreferrer">
             <i class="fas fa-file-alt"></i>
         </a>
     `;
 
-    // Render Template - Structure changed to Flexbox container (div instead of header to avoid CSS conflict)
     detailContent.innerHTML = `
         <div class="detail-header">
             <div class="detail-icon-container">

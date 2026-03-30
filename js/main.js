@@ -1,134 +1,257 @@
 import projects from './projects.js';
+import { getProjectIcon } from './project-utils.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const projectGrid = document.getElementById('project-grid');
+    const projectGroups = document.getElementById('project-groups');
 
-    if (!projectGrid) return;
+    const groupConfig = [
+        {
+            key: 'ml-ai',
+            id: 'group-ml-ai',
+            title: 'ML & AI Systems',
+            intro: 'Benchmarking, model operations, and AI platform strategy.'
+        },
+        {
+            key: 'products',
+            id: 'group-products',
+            title: 'Product & UX Engineering',
+            intro: 'User-facing applications across mobile and web.'
+        },
+        {
+            key: 'research',
+            id: 'group-research',
+            title: 'Research & Data Science',
+            intro: 'Scientific studies, analytics, and explainability.'
+        },
+        {
+            key: 'platform',
+            id: 'group-platform',
+            title: 'Platform & Infrastructure',
+            intro: 'Data systems, architecture, and enterprise tooling.'
+        }
+    ];
 
-    // Check if we should limit the number of projects (e.g. for Home page)
-    const limit = projectGrid.dataset.limit ? parseInt(projectGrid.dataset.limit) : projects.length;
+    function getProjectGroupKey(project) {
+        const text = (project.title + ' ' + project.description + ' ' + project.tags.join(' ')).toLowerCase();
 
-    // Check if we are on the Projects page (List view) or Home page (Grid view)
-    const isListView = projectGrid.classList.contains('project-list');
-
-    // Home Page Check:
-    // If we are on Home Page (Grid View / limit is set), we DO NOT want any links (Read More).
-    // The previous implementation was:
-    // if (isListView) -> show GitHub + Read More
-    // if (!isListView) -> show NOTHING (Home Page)
-
-    function getProjectIcon(project) {
-        // Simple heuristic to pick an icon based on title/tags
-        const text = (project.title + " " + project.tags.join(" ")).toLowerCase();
-        if (text.includes('data') || text.includes('analysis')) return '<i class="fas fa-chart-bar"></i>';
-        if (text.includes('game') || text.includes('scrabble')) return '<i class="fas fa-gamepad"></i>';
-        if (text.includes('database') || text.includes('sql')) return '<i class="fas fa-database"></i>';
-        if (text.includes('coffee') || text.includes('brew') || text.includes('espresso')) return '<i class="fas fa-mug-hot"></i>';
-        if (text.includes('ai') || text.includes('gpt') || text.includes('llm') || text.includes('learning')) return '<i class="fas fa-brain"></i>';
-        if (text.includes('react') || text.includes('web')) return '<i class="fas fa-globe"></i>';
-        if (text.includes('robot') || text.includes('twin')) return '<i class="fas fa-robot"></i>';
-        if (text.includes('mobile') || text.includes('expo') || text.includes('react native')) return '<i class="fas fa-mobile-alt"></i>';
-        if (text.includes('security')) return '<i class="fas fa-shield-alt"></i>';
-        return '<i class="fas fa-code"></i>';
+        if (text.includes('llm') || text.includes('benchmark') || text.includes('mcp') || text.includes('robot') || text.includes('inference') || text.includes('ai')) {
+            return 'ml-ai';
+        }
+        if (text.includes('react') || text.includes('next.js') || text.includes('mobile') || text.includes('frontend') || text.includes('app')) {
+            return 'products';
+        }
+        if (text.includes('xai') || text.includes('science') || text.includes('analysis') || text.includes('streamlit') || text.includes('research')) {
+            return 'research';
+        }
+        return 'platform';
     }
 
-    function renderProjects() {
-        projectGrid.innerHTML = '';
+    function buildProjectCard(project, showLinks) {
+        const card = document.createElement('article');
+        card.className = 'project-card';
 
+        const iconHtml = getProjectIcon(project);
+        const tagsHtml = project.tags.map((tag) => `<span class="tag">${tag}</span>`).join('');
+
+        let linksHtml = '';
+        if (showLinks) {
+            const slug = project.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+            const repoName = `Mzaex7/${slug}`;
+
+            if (project.github || project.learnMore) {
+                linksHtml += '<div class="project-links-container">';
+
+                if (project.github) {
+                    linksHtml += `
+                        <a href="${project.github}" class="github-repo-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i>
+                            <span>${repoName}</span>
+                            <i class="fas fa-arrow-up-right-from-square" style="font-size: 0.8em; margin-left: auto;"></i>
+                        </a>
+                    `;
+                }
+
+                if (project.learnMore) {
+                    linksHtml += `
+                        <a href="project-detail.html?id=${project.id}" class="learn-more-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    `;
+                }
+
+                linksHtml += '</div>';
+            }
+        }
+
+        card.innerHTML = `
+            <div class="project-thumbnail">
+                ${iconHtml}
+            </div>
+            <div class="card-content">
+                <h3 class="project-title">${project.title}</h3>
+                <p class="project-desc">${project.description}</p>
+                ${linksHtml}
+                <div class="project-tags">
+                    ${tagsHtml}
+                </div>
+            </div>
+        `;
+
+        card.addEventListener('click', (e) => {
+            if (e.target.closest('a')) return;
+            window.location.href = `project-detail.html?id=${project.id}`;
+        });
+
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+
+        return card;
+    }
+
+    function renderHomeProjects() {
+        if (!projectGrid) return;
+        const limit = projectGrid.dataset.limit ? parseInt(projectGrid.dataset.limit, 10) : projects.length;
         const projectsToRender = projects.slice(0, limit);
 
-        projectsToRender.forEach(project => {
-            const card = document.createElement('div');
-            card.className = 'project-card';
-
-            const iconHtml = getProjectIcon(project);
-
-            // Create tags HTML
-            const tagsHtml = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
-
-            // Build links section (Only for Projects Page / List View)
-            let linksHtml = '';
-
-            if (isListView) { // Only on Projects Page
-                // Determine GitHub display text (User/Repo-Slug)
-                const slug = project.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-                const repoName = `Mzaex7/${slug}`;
-
-                // Only generate HTML if we have links to show
-                if (project.github || project.learnMore) {
-                    linksHtml += '<div class="project-links-container">';
-
-                    if (project.github) {
-                        linksHtml += `
-                            <a href="${project.github}" class="github-repo-link" target="_blank">
-                                <i class="fab fa-github"></i>
-                                <span>${repoName}</span>
-                                <i class="fas fa-arrow-up-right-from-square" style="font-size: 0.8em; margin-left: auto;"></i>
-                            </a>
-                        `;
-                    }
-
-                    if (project.learnMore) {
-                        linksHtml += `
-                            <a href="project-detail.html?id=${project.id}" class="learn-more-link">
-                                Read More <i class="fas fa-arrow-right"></i>
-                            </a>
-                        `;
-                    }
-
-                    linksHtml += '</div>';
-                }
-            }
-
-            card.innerHTML = `
-                <!-- Thumbnail wrapper (Visible in List View, Hidden in Grid View via CSS) -->
-                <div class="project-thumbnail">
-                    ${iconHtml}
-                </div>
-
-                <div class="card-content">
-                     <!-- On Home Page, make Title clickable? Or card clickable? -->
-                     <!-- User complained about clicking and scrolling to top earlier. -->
-                     <!-- Let's wrap title in link ONLY if on Home Page? No, consistent UX. -->
-                     <!-- If card is clickable, title link is redundant. -->
-                    
-                    <h3 class="project-title">${project.title}</h3>
-                    <p class="project-desc">${project.description}</p>
-                    
-                    ${linksHtml}
-                    
-                    <div class="project-tags">
-                        ${tagsHtml}
-                    </div>
-                </div>
-            `;
-
-            // Interaction Logic:
-            // 1. On Projects Page (List View): Buttons handle navigation (Read More -> Detail, GitHub -> External).
-            //    Card click itself? Maybe redundant if buttons exist but helps.
-            // 2. On Home Page (Grid View): User said "NO Read More". So card MUST be clickable to get to detail.
-
-            card.style.cursor = 'pointer';
-            card.addEventListener('click', (e) => {
-                // If user clicked a link/button inside card, let it handle navigation
-                if (e.target.closest('a')) return;
-
-                // Otherwise navigate to detail page
-                window.location.href = `project-detail.html?id=${project.id}`;
-            });
-
-            // Hover effect logic
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                card.style.setProperty('--mouse-x', `${x}px`);
-                card.style.setProperty('--mouse-y', `${y}px`);
-            });
-
-            projectGrid.appendChild(card);
+        projectGrid.innerHTML = '';
+        projectsToRender.forEach((project) => {
+            projectGrid.appendChild(buildProjectCard(project, false));
         });
     }
 
-    renderProjects();
+    function renderGroupedProjects() {
+        if (!projectGroups) return;
+
+        const grouped = {
+            'ml-ai': [],
+            products: [],
+            research: [],
+            platform: []
+        };
+
+        projects.forEach((project) => {
+            const key = getProjectGroupKey(project);
+            grouped[key].push(project);
+        });
+
+        projectGroups.innerHTML = '';
+
+        groupConfig.forEach((group) => {
+            if (!grouped[group.key].length) return;
+
+            const section = document.createElement('section');
+            section.className = 'project-group';
+            section.id = group.id;
+
+            const header = document.createElement('div');
+            header.className = 'project-group-header';
+            header.innerHTML = `
+                <span class="group-chip">${group.title}</span>
+                <p class="group-intro">${group.intro}</p>
+            `;
+
+            const list = document.createElement('div');
+            list.className = 'project-list';
+
+            grouped[group.key].forEach((project) => {
+                list.appendChild(buildProjectCard(project, true));
+            });
+
+            section.appendChild(header);
+            section.appendChild(list);
+            projectGroups.appendChild(section);
+        });
+    }
+
+    function setupProjectsSectionProgress() {
+        if (!projectGroups) return;
+
+        const jumpNav = document.querySelector('.project-jump-nav');
+        if (!jumpNav) return;
+
+        const jumpLinks = Array.from(jumpNav.querySelectorAll('.jump-link'));
+        if (!jumpLinks.length) return;
+
+        const sections = jumpLinks
+            .map((link) => {
+                const href = link.getAttribute('href') || '';
+                const id = href.startsWith('#') ? href.slice(1) : href;
+                const section = id ? document.getElementById(id) : null;
+                return section ? { link, section } : null;
+            })
+            .filter(Boolean);
+
+        if (!sections.length) return;
+
+        const progressTrack = document.createElement('div');
+        progressTrack.className = 'jump-progress-track';
+
+        const progressFill = document.createElement('div');
+        progressFill.className = 'jump-progress-fill';
+
+        progressTrack.appendChild(progressFill);
+        jumpNav.appendChild(progressTrack);
+        let ticking = false;
+
+        const setActiveLink = (activeItem) => {
+            sections.forEach(({ link }) => {
+                const isActive = link === activeItem.link;
+                link.classList.toggle('active', isActive);
+                if (isActive) {
+                    link.setAttribute('aria-current', 'true');
+                } else {
+                    link.removeAttribute('aria-current');
+                }
+            });
+        };
+
+        const update = () => {
+            const navHeight = jumpNav.offsetHeight;
+            const stickyTop = parseFloat(window.getComputedStyle(jumpNav).top) || 0;
+            const anchorLine = window.scrollY + stickyTop + navHeight + 14;
+
+            let activeIndex = 0;
+            for (let i = 0; i < sections.length; i += 1) {
+                if (sections[i].section.offsetTop <= anchorLine) {
+                    activeIndex = i;
+                } else {
+                    break;
+                }
+            }
+
+            const activeItem = sections[activeIndex];
+            const sectionStart = Math.max(0, activeItem.section.offsetTop - (stickyTop + navHeight + 14));
+            const nextSection = sections[activeIndex + 1] ? sections[activeIndex + 1].section : null;
+            const sectionEnd = nextSection
+                ? Math.max(sectionStart + 1, nextSection.offsetTop - (stickyTop + navHeight + 14))
+                : Math.max(sectionStart + 1, document.documentElement.scrollHeight - window.innerHeight);
+
+            const ratio = Math.min(1, Math.max(0, (window.scrollY - sectionStart) / (sectionEnd - sectionStart)));
+            progressFill.style.transform = `scaleX(${ratio})`;
+
+            setActiveLink(activeItem);
+            ticking = false;
+        };
+
+        const onScroll = () => {
+            if (!ticking) {
+                requestAnimationFrame(update);
+                ticking = true;
+            }
+        };
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll);
+        update();
+    }
+
+    renderHomeProjects();
+    renderGroupedProjects();
+    setupProjectsSectionProgress();
 });
