@@ -36,7 +36,7 @@ const projects = [
         title: "Bitter Melons — Review Aggregation DB",
         description: "An independent alternative to Rotten Tomatoes: a BCNF-normalized database architecture for aggregating critic and user reviews without media-conglomerate conflicts of interest.",
         tags: ["SQL", "DB Architecture", "BCNF", "Stored Procedures"],
-        github: "https://github.com/Mzaex7",
+        github: "https://github.com/Mzaex7/BitterMelon-sql-project",
         learnMore: true,
         detailedDescription: "Bitter Melons is a database project designed as an independent, conflict-free alternative to Rotten Tomatoes. The system aggregates professional critic scores into a 'Sweetness Index' (equivalent to the Tomatometer) and verified user reviews into a 'Melon Meter' (audience score). The SQL database is fully normalized to BCNF, using Views for complex metric computation and Stored Procedures for administrative tasks such as UpdateUserReview. The project demonstrates end-to-end relational database design from ER modeling through query optimization.",
         highlights: [
