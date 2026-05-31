@@ -1,7 +1,7 @@
 const projects = [
     {
         id: "brewref",
-        title: "BrewRef — Specialty Coffee App",
+        title: "BrewRef: Specialty Coffee App",
         description: "Cross-platform mobile app for espresso brew logging, analysis, and AI-powered optimization. Built with Expo, React Native, and TypeScript following an 'Industrial Zen' design.",
         tags: ["Expo", "React Native", "TypeScript", "AI", "Mobile"],
         github: "https://github.com/Mzaex7/Coffee-app",
@@ -18,11 +18,11 @@ const projects = [
     {
         id: "social-networks-analysis",
         title: "Social Networks Analysis",
-        description: "Influence of competitive structures on Data Science salary levels — a Social Network Analysis using R (igraph, visNetwork, ggplot2).",
+        description: "Influence of competitive structures on Data Science salary levels, a Social Network Analysis using R (igraph, visNetwork, ggplot2).",
         tags: ["R", "igraph", "Network Analysis", "Data Viz", "Science"],
         learnMore: true,
         github: "https://github.com/Mzaex7",
-        detailedDescription: "A scientific study investigating how a company's position and centrality within a competitive network influences salary structures for Data Science positions. Based on a Kaggle/Glassdoor dataset of 742 US job postings, a competition network was constructed (nodes = companies, edges = competitors) and analyzed using centrality metrics (Betweenness, Degree, Eigenvector) and community detection (Louvain algorithm). Key finding: Betweenness centrality — a company's role as a strategic intermediary — showed the strongest correlation with higher salaries, while industry affiliation (IT, Software) within central clusters was the most significant factor. Geographic hotspots like NYC and SF paid approx. $13.6k more on average.",
+        detailedDescription: "A scientific study investigating how a company's position and centrality within a competitive network influences salary structures for Data Science positions. Based on a Kaggle/Glassdoor dataset of 742 US job postings, a competition network was constructed (nodes = companies, edges = competitors) and analyzed using centrality metrics (Betweenness, Degree, Eigenvector) and community detection (Louvain algorithm). Key finding: Betweenness centrality (a company's role as a strategic intermediary) showed the strongest correlation with higher salaries, while industry affiliation (IT, Software) within central clusters was the most significant factor. Geographic hotspots like NYC and SF paid approx. $13.6k more on average.",
         highlights: [
             "Competition network built from Glassdoor data (742 job postings, 28 features)",
             "Centrality analysis: Betweenness, Degree, and Eigenvector centrality via igraph",
@@ -33,7 +33,7 @@ const projects = [
     },
     {
         id: "rotten-tomatoes-clone",
-        title: "Bitter Melons — Review Aggregation DB",
+        title: "Bitter Melons: Review Aggregation DB",
         description: "An independent alternative to Rotten Tomatoes: a BCNF-normalized database architecture for aggregating critic and user reviews without media-conglomerate conflicts of interest.",
         tags: ["SQL", "DB Architecture", "BCNF", "Stored Procedures"],
         github: "https://github.com/Mzaex7/BitterMelon-sql-project",
@@ -213,10 +213,10 @@ const projects = [
     {
         id: "beer-xai",
         title: "Semantic Feature Grouping for XAI",
-        description: "Research paper: Semantically-Constrained Feature Grouping for Robust Explainable AI — addressing SHAP's limitations in correlated datasets using beer sensory data.",
+        description: "Research paper: Semantically-Constrained Feature Grouping for Robust Explainable AI, addressing SHAP's limitations in correlated datasets using beer sensory data.",
         tags: ["XAI", "SHAP", "DSR", "Python", "Research", "LLM"],
         learnMore: true,
-        detailedDescription: "A Design-Science-Research paper developing a Semantic-Grouped-SHAP approach that bridges the gap between mathematical faithfulness and practical actionability in Explainable AI. Standard SHAP assumes feature independence, which produces misleading explanations in domains with high multicollinearity — such as beer sensory evaluation, where attributes like fruitiness and sweetness are psychologically coupled. The paper extends GroupSegment-SHAP (GS-SHAP) by integrating domain knowledge via a semantic affinity matrix (constructed with LLM reasoning and vector embeddings) alongside statistical dependency (HSIC). A hyperparameter ω controls the trade-off between statistical and semantic grouping. Evaluation compares three variants — ungrouped SHAP, purely statistical grouping, and semantic-hybrid grouping — using coherence metrics and LLM-based expert evaluation. Co-authored with four colleagues, submitted February 2026.",
+        detailedDescription: "A Design-Science-Research paper developing a Semantic-Grouped-SHAP approach that bridges the gap between mathematical faithfulness and practical actionability in Explainable AI. Standard SHAP assumes feature independence, which produces misleading explanations in domains with high multicollinearity, such as beer sensory evaluation, where attributes like fruitiness and sweetness are psychologically coupled. The paper extends GroupSegment-SHAP (GS-SHAP) by integrating domain knowledge via a semantic affinity matrix (constructed with LLM reasoning and vector embeddings) alongside statistical dependency (HSIC). A hyperparameter ω controls the trade-off between statistical and semantic grouping. Evaluation compares three variants: ungrouped SHAP, purely statistical grouping, and semantic-hybrid grouping, using coherence metrics and LLM-based expert evaluation. Co-authored with four colleagues, submitted February 2026.",
         highlights: [
             "Semantic-Grouped-SHAP: hybrid feature grouping combining HSIC statistical dependency with LLM-derived semantic affinity",
             "Addresses perceptual multicollinearity in beer sensory panel data (correlated taste attributes)",
@@ -227,11 +227,11 @@ const projects = [
     },
     {
         id: "mario-party-balloon-platzen",
-        title: "Mario Party Clone — Balloon-Platzen",
-        description: "Team project: a Mario Party copy in Java. My mini-game 'Balloon-Platzen' focuses on multithreading — pop balloons before they hit the spikes.",
+        title: "Mario Party Clone: Balloon-Platzen",
+        description: "Team project: a Mario Party copy in Java. My mini-game 'Balloon-Platzen' focuses on multithreading: pop balloons before they hit the spikes.",
         tags: ["Java", "JavaFX", "Threads", "Game Dev", "Team Project"],
         learnMore: true,
-        detailedDescription: "As part of a team project, we built a Mario Party clone in Java. My contribution was the 'Balloon-Platzen' mini-game — a speed-based challenge where the player must click to pop balloons before they float up to spikes at the top of the screen. The focus lies on parallel thread management: each balloon is driven by its own thread for independent movement and rendering. Techniques include inheritance, data encapsulation, lambda expressions, streams, and a Bubble-Sort algorithm that orders balloons by spawn speed to create progressively increasing difficulty.",
+        detailedDescription: "As part of a team project, we built a Mario Party clone in Java. My contribution was the 'Balloon-Platzen' mini-game, a speed-based challenge where the player must click to pop balloons before they float up to spikes at the top of the screen. The focus lies on parallel thread management: each balloon is driven by its own thread for independent movement and rendering. Techniques include inheritance, data encapsulation, lambda expressions, streams, and a Bubble-Sort algorithm that orders balloons by spawn speed to create progressively increasing difficulty.",
         highlights: [
             "One thread per balloon for independent movement and rendering",
             "Bubble-Sort for progressive difficulty scaling by spawn speed",
