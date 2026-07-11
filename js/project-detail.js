@@ -71,6 +71,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Generate Footer Links
     let footerLinks = '';
 
+    if (project.liveUrl) {
+        footerLinks += `
+            <a href="${project.liveUrl}" class="detail-footer-icon" title="Visit Live Site" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-globe"></i>
+            </a>
+        `;
+    }
+
     if (project.github) {
         footerLinks += `
             <a href="${project.github}" class="detail-footer-icon" title="View Source on GitHub" target="_blank" rel="noopener noreferrer">

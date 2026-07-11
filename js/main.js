@@ -59,8 +59,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const slug = project.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
             const repoName = `Mzaex7/${slug}`;
 
-            if (project.github || project.learnMore) {
+            if (project.github || project.liveUrl || project.learnMore) {
                 linksHtml += '<div class="project-links-container">';
+
+                if (project.liveUrl) {
+                    linksHtml += `
+                        <a href="${project.liveUrl}" class="github-repo-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-globe"></i>
+                            <span>${project.liveUrl.replace(/^https?:\/\//, '')}</span>
+                            <i class="fas fa-arrow-up-right-from-square" style="font-size: 0.8em; margin-left: auto;"></i>
+                        </a>
+                    `;
+                }
 
                 if (project.github) {
                     linksHtml += `

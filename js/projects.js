@@ -48,6 +48,22 @@ const projects = [
         ]
     },
     {
+        id: "ehk-tietze-website",
+        title: "Corporate Website ehk-tietze.de",
+        description: "Modern, performance-focused website for an electrical, energy, and climate technology company. Built with Astro for fast static delivery, responsive design, and strong SEO.",
+        tags: ["Astro", "Web Dev", "Frontend", "SEO", "Responsive"],
+        liveUrl: "https://ehk-tietze.de",
+        learnMore: true,
+        detailedDescription: "Conception and development of a modern web presence for EHK Tietze, an owner-operated electrical, energy, and climate technology specialist based in Kämpfelbach-Bilfingen. The site presents the company's full service portfolio, photovoltaic systems, heat pumps, air conditioning, energy storage, and building automation, through high-quality project photography, a clear visual hierarchy, and a personable, founder-focused brand voice. Built with Astro for a performance-first static architecture, the site is fully responsive and SEO-optimized, and includes an interactive climate control configurator that lets visitors get a quick assessment before making contact.",
+        highlights: [
+            "Performance-first static architecture with Astro",
+            "Interactive climate control configurator for quick customer self-assessment",
+            "Fully responsive design with a clean, modern visual hierarchy",
+            "SEO optimization and prominent contact/emergency-service calls to action",
+            "Service showcase for photovoltaics, heat pumps, air conditioning, and building automation"
+        ]
+    },
+    {
         id: "markzeitler-website",
         title: "Corporate Website markzeitler.de",
         description: "Development of a modern web presence for a company. Implemented with React.",
